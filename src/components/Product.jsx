@@ -1,4 +1,5 @@
 import Price from './Price';
+import "../styles/Product.css";
 
 const Product = ({
     title = "Produs Neidentificat",
@@ -6,7 +7,7 @@ const Product = ({
     price = 0
 }) => {
     return (
-        <div className="product">
+        <div className="product container border">
             <h2>{title}</h2>
 
             {srcImg && (
