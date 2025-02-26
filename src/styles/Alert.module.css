@@ -1,0 +1,25 @@
+.alert {
+    color: white;
+    font-weight: bold;
+    background-color: black;
+}
+
+.info {
+    composes: alert;
+    background-color: blue;
+}
+
+.warning {
+    composes: alert;
+    background-color: yellow;
+}
+
+.success {
+    composes: alert;
+    background-color: green;
+}
+
+.error {
+    composes: alert;
+    background-color: red;
+}
