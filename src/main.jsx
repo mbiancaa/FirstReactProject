@@ -5,6 +5,12 @@ import App from './App.jsx';
 import "modern-normalize";
 
 createRoot(document.getElementById('root')).render(
+  /**
+   * 
+   * Strict Mode Life Cycle:
+   * mount -> unmount -> mount
+   * 
+   */
   <StrictMode>
     <App />
   </StrictMode>,
