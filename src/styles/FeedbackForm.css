@@ -1,0 +1,15 @@
+.formField {
+    display: block;
+    margin: 10px 0 10px;
+    width: 300px;
+    height: 40px;
+}
+
+.formItem {
+    margin-bottom: 20;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}

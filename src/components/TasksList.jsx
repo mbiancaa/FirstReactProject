@@ -8,6 +8,9 @@ const TasksList = () => {
     ]);
 
     const [newTask, setNewTask] = useState("");
+    const [showCompleted, setShowCompleted] = useState(true);
+
+    const filteredTasks = showCompleted ? tasks : tasks.filter((task) => !task.completed);
 
     const addTask = () => {
         if (newTask.trim() === "") return;
@@ -24,6 +27,13 @@ const TasksList = () => {
         setTasks(tasks.filter((task) => task.id !== taskId))
     }
 
+    const toggleTaskCompletion = (taskId) => {
+        setTasks(
+            tasks.map((task) => task.id === taskId ? {
+                ...task, completed: !task.completed
+            } : task)
+        );
+    }
 
 
     return (
@@ -33,19 +43,30 @@ const TasksList = () => {
                     setNewTask(event.target.value);
                 }} />
                 <button onClick={addTask}>Add task</button>
+                <button onClick={() => setShowCompleted(!showCompleted)} >
+                    {showCompleted ? "Hide completed" : "Show all"}
+                </button>
             </div>
             <h1>Tasks list</h1>
-            <ul>
+            {/* <ul>
                 {
                     tasks.map((task) =>
                     (<li key={task.id}>
-                        {task.text} {task.completed ? 'checkmark' : 'X'}
+                        {task.text} {task.completed ? '✅' : '❌'}
                         <button onClick={() => deleteTask(task.id)}>Delete task</button>
+                        <button onClick={() => toggleTaskCompletion(task.id)}>Update task status</button>
                     </li>)
                     )
                 }
-            </ul>
+            </ul> */}
 
+            <ul>
+                {
+                    filteredTasks.map((task) => (
+                        <li key={task.id}>{task.text} {task.completed ? '✅' : '❌'}</li>
+                    ))
+                }
+            </ul>
         </div>
     );
 }

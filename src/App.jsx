@@ -12,7 +12,8 @@ import "./styles/generalStyles.css";
 // import RadioButtonsExp from './components/RadioButtonsExp';
 // import Checkbox from './components/Checkbox';
 // import ControlledLoginForm from './components/ControlledLoginForm';
-import TasksList from './components/TasksList';
+// import TasksList from './components/TasksList';
+import FeedbackForm from './components/FeedbackForm';
 
 function App() {
 
@@ -39,7 +40,9 @@ function App() {
       {/* <RadioButtonsExp /> */}
       {/* <Checkbox /> */}
       {/* <ControlledLoginForm onLogin={handleLogin} /> */}
-      <TasksList />
+      {/* <TasksList /> */}
+
+      <FeedbackForm />
     </>
   );
 
