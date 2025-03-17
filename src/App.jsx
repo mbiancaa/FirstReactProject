@@ -13,7 +13,8 @@ import "./styles/generalStyles.css";
 // import Checkbox from './components/Checkbox';
 // import ControlledLoginForm from './components/ControlledLoginForm';
 // import TasksList from './components/TasksList';
-import FeedbackForm from './components/FeedbackForm';
+// import FeedbackForm from './components/FeedbackForm';
+import Blog from './components/Blog';
 
 function App() {
 
@@ -42,7 +43,8 @@ function App() {
       {/* <ControlledLoginForm onLogin={handleLogin} /> */}
       {/* <TasksList /> */}
 
-      <FeedbackForm />
+      {/* <FeedbackForm /> */}
+      <Blog />
     </>
   );
 
