@@ -1,5 +1,7 @@
 import './App.css';
 import "./styles/generalStyles.css";
+import { useUser } from './contexts/userContext';
+
 // import { useState } from 'react';
 // import Modal from './components/Modal';
 // import ClickButton from './components/ClickButton';
@@ -14,9 +16,13 @@ import "./styles/generalStyles.css";
 // import ControlledLoginForm from './components/ControlledLoginForm';
 // import TasksList from './components/TasksList';
 // import FeedbackForm from './components/FeedbackForm';
-import Blog from './components/Blog';
+// import Blog from './components/Blog';
+// import TestHook from './components/TestHook';
+// import PlayerVideo from './components/PlayerVideo';
 
 function App() {
+
+  const { isLoggedIn, username, login, logout } = useUser();
 
   // const [isOpen, setIsOpen] = useState(false)
   // const handleLogin = (userData) => {
@@ -26,6 +32,19 @@ function App() {
 
   return (
     <>
+      {isLoggedIn ? (
+        <>
+          <p>{username}</p>
+          <button onClick={logout}>Log out</button>
+        </>
+      ) : (
+        <>
+          <p> You are not logged in yet.</p>
+          <button onClick={login}>Log in</button>
+        </>
+      )}
+
+
       {/* <button onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? "Close" : "Open"}
       </button>
@@ -44,7 +63,10 @@ function App() {
       {/* <TasksList /> */}
 
       {/* <FeedbackForm /> */}
-      <Blog />
+      {/* <Blog /> */}
+      {/* <TestHook /> */}
+      {/* <PlayerVideo videoSrc="http://media.w3.org/2010/05/sintel/trailer.mp4" /> */}
+
     </>
   );
 
