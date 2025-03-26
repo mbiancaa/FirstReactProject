@@ -22,7 +22,7 @@ import { useUser } from './contexts/userContext';
 
 function App() {
 
-  const { isLoggedIn, username, login, logout } = useUser();
+  // const { isLoggedIn, username, login, logout } = useUser();
 
   // const [isOpen, setIsOpen] = useState(false)
   // const handleLogin = (userData) => {
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      {isLoggedIn ? (
+      {/* {isLoggedIn ? (
         <>
           <p>{username}</p>
           <button onClick={logout}>Log out</button>
@@ -42,7 +42,7 @@ function App() {
           <p> You are not logged in yet.</p>
           <button onClick={login}>Log in</button>
         </>
-      )}
+      )} */}
 
 
       {/* <button onClick={() => setIsOpen(!isOpen)}>
