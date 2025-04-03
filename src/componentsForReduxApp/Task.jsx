@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteTask, toggleCompleted } from "../redux/actions";
+import { deleteTask, toggleCompleted } from "../redux/slices/tasksSlice";
 
 const Task = ({ task }) => {
     const dispatch = useDispatch();

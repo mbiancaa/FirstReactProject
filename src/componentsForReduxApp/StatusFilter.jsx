@@ -1,6 +1,7 @@
 import { statusFilters } from "../redux/constants";
 import { useSelector, useDispatch } from "react-redux";
-import { setStatusFilter } from "../redux/actions";
+import { setStatusFilter } from "../redux/slices/filtersSlice";
+import { Button } from './Button';
 
 export const StatusFilter = () => {
     const filter = useSelector(state => state.filters.status);
@@ -8,8 +9,11 @@ export const StatusFilter = () => {
     const handleFilterChange = filter => dispatch(setStatusFilter(filter));
 
     return (
-        <button selected={filter === statusFilters.all} onClick={()=>handleFilterChange(statusFilters.all)}>All</button>
-        <button selected={filter === statusFilters.active} onClick={()=>handleFilterChange(statusFilters.active)}>Active</button>
-        <button selected={filter === statusFilters.completed} onClick={()=>handleFilterChange(statusFilters.completed)}>Completed</button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <Button selected={filter === statusFilters.all} onClick={() => handleFilterChange(statusFilters.all)}>All</Button>
+            <Button selected={filter === statusFilters.active} onClick={() => handleFilterChange(statusFilters.active)}>Active</Button>
+            <Button selected={filter === statusFilters.completed} onClick={() => handleFilterChange(statusFilters.completed)}>Completed</Button>
+        </div>
+
     );
 }

@@ -1,49 +1,10 @@
-import { createStore } from 'redux';
-import { devToolsEnhancer } from '@redux-devtools/extension';
-// import { rootReducer } from '.reducer';
+import { configureStore } from '@reduxjs/toolkit';
+import { tasksReducer } from './slices/tasksSlice';
+import { filtersReducer } from './slices/filtersSlice';
 
-const initialState = {
-    tasks: [
-        { id: 1, text: "Learn HTML&CSS", completed: true },
-        { id: 2, text: "Learn JavaScript", completed: true },
-        { id: 3, text: "Learn React", completed: false },
-        { id: 4, text: "Learn Redux", completed: false },
-        { id: 5, text: "Develop the best app", completed: false }
-    ],
-    filters: {
-        status: "all",
-    }
-};
-
-const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "tasks/addTask": {
-            return {
-                ...state,
-                tasks: [
-                    ...state.tasks,
-                    action.payload
-                ]
-            }
-        }
-        case "tasks/toggleCompleted": {
-            return {
-                ...state,
-                tasks: state.tasks.map(task => task.id === action.payload ? {
-                    ...task, completed: !task.completed
-                } : task),
-            };
-        }
-        case "tasks/deleteTask": {
-            return {
-                ...state,
-                tasks: state.tasks.filter(task => task.id !== action.payload),
-            };
-        }
-        default:
-            return state;
-    }
-}
-const enhancer = devToolsEnhancer();
-
-export const store = createStore(rootReducer, enhancer);
+export const store = configureStore({
+    reducer: {
+        tasks: tasksReducer,
+        filters: filtersReducer
+    },
+});
