@@ -1,10 +1,13 @@
-import NavBar from "../components/NavBar";
+import { TaskList } from "../componentsForReduxApp/TaskList";
+import { TaskCounter } from "../componentsForReduxApp/TaskCounter";
+import { TaskForm } from "../componentsForReduxApp/TaskForm";
 const Homepage = () => {
     return (
         <>
-            <NavBar />
-            <h1>Homepage</h1>
-            <p>Welcome to my homepage!</p>
+            <h1>Task Scheduler</h1>
+            <TaskForm />
+            <TaskCounter />
+            <TaskList />
         </>
     );
 }
