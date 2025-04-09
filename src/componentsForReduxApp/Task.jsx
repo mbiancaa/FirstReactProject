@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteTask, toggleCompleted } from "../redux/slices/tasksSlice";
+import { deleteTask, toggleCompleted } from "../reduxHTTP/operations";
 
 const Task = ({ task }) => {
     const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const Task = ({ task }) => {
     }
 
     const handleToggle = () => {
-        dispatch(toggleCompleted(task.id))
+        dispatch(toggleCompleted(task))
     }
 
 

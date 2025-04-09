@@ -94,3 +94,7 @@ p {
 .active {
   color: red;
 }
+
+input.errorInput {
+  border-color: red;
+}

@@ -4,7 +4,7 @@ import './index.css';
 // import "modern-normalize";
 import ReactDOM from "react-dom/client";
 import { store } from './redux/store';
-import Homepage from './pages/Homepage';
+// import Homepage from './pages/Homepage';
 import { Provider } from 'react-redux';
 // import About from './pages/About';
 // import Blog from './pages/Blog';
@@ -14,6 +14,7 @@ import { Provider } from 'react-redux';
 // import ProductItem from './pages/ProductItem';
 // import PrivacyPolicy from './pages/PrivacyPolicy';
 // import Terms from './pages/Terms';
+import ReduxHTTP from './components/ReduxHTTP';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <BrowserRouter>
@@ -34,7 +35,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   // </BrowserRouter>
 
   <Provider store={store}>
-    <Homepage />
+    {/* <Homepage /> */}
+    <ReduxHTTP />
   </Provider>
 );
 
